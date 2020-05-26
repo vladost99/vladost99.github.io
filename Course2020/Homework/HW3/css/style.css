@@ -117,7 +117,7 @@ img {
 }
 
 .recipes__tabs {
-    width: 473px;
+    width: 460px;
     height: 41px;
     background-color: #f1f1f1;
     margin: 0 auto;
@@ -136,6 +136,9 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.recipes__list .recipes__tab:last-child {
+    margin-right: 24px;
 }
 
 .recipes__list .recipes__tab:first-child {
