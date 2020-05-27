@@ -103,6 +103,7 @@ img {
     background: url("../img/rec.png") center center/cover no-repeat;
     height: 350px;
     padding-top: 58px;
+    display: flex;
 }
 .header__block-search .container-form {
     width: 500px;
@@ -594,6 +595,7 @@ img {
 
 /*Offer*/
 .offer {
+    padding-top: 88px;
     padding-right: 110px;
     padding-left: 110px;
     padding-bottom: 143px;
@@ -646,7 +648,7 @@ img {
 .offer__reality .offer__reality-name {
     color: #1baf5d;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .offer__reality .offer__reality-block {
@@ -688,6 +690,7 @@ img {
     background: linear-gradient(to top, rgba(0,0,0, 0.7),rgba(0,0,0, 0.7)) , url("../img/bg1.png") center center/cover no-repeat;
     padding-top: 61px;
     padding-bottom: 64px;
+    display: flex;
 }
 
 .footer__subscribe {
