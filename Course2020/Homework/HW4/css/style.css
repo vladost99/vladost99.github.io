@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.map {
+    background: url("../img/map.jpg") center center/cover no-repeat;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+}
+
+.title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.continents {
+    width: 33.33%;
+    height: 100vh;
+}
+
+.america {
+    background-color: rgba(0,0,255, 0.4);
+    height: 100%;
+}
+
+.country {
+    margin: 0 30px;
+    background-color: rgba(0,0,0, .3);
+}
+
+.country .country__info {
+    display: flex;
+    align-items: center;
+}
+
+.country  .country__name {
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.city {
+    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 35px;
+}
+
+.city__title {
+    margin-left: 15px;
+}
+
+.city .city__title {
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.city .city__item {
+    display: flex;
+    align-items: center;
+    margin-top: 23px;
+    margin-left: 15px;
+}
+
+.city .city__name {
+    color: #ffffff;
+    font-size: 21px;
+    font-weight: 400;
+    margin-left: 7px;
+}
+
+.europe {
+    background: rgba(99, 4, 96, 0.7);
+}
+
+.africa {
+    background: rgba(255, 242, 0, 0.7);
+}
+
+.asia {
+    background: rgba(158, 11, 15, 0.7);
+}
+
+.australia {
+    background: rgba(247, 148, 29, 0.7);
+}
+
+.europe , .africa , .asia  , .australia {
+    height: 50%;
+}
+
+
+
