@@ -1,0 +1,28 @@
+.header {
+    .web-designer {
+        background: url("../img/img.png") center center/cover no-repeat;
+        min-height: 1000px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        &__title {
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 24px;
+            padding: 20px 0;
+            text-transform: uppercase;
+            border-top: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+        &__button {
+            margin-top: 50px;
+            transition: background-color .5s;
+            &:hover {
+                background-color: $green;
+            }
+        }
+    }
+}

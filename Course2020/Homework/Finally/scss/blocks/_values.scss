@@ -1,0 +1,16 @@
+.values {
+    padding: 100px 0;
+    &__info {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__descr {
+        margin-top: 48px;
+        line-height: 30px;
+        color: #919191;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 30px;
+    }
+
+}
