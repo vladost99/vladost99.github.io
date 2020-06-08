@@ -3,7 +3,7 @@
     margin: 0;
 }
 .container {
-    width: 1180px;
+    max-width: 1180px;
     margin: 0 auto;
 }
 @import "base/variables";
@@ -15,3 +15,4 @@
 @import "blocks/values";
 @import "blocks/about";
 @import "blocks/descr";
+@import "blocks/humburger";

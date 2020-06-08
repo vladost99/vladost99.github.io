@@ -7,6 +7,7 @@
         padding: 15px 0;
         .brand {
             display: flex;
+            margin-left: 15px;
             &__img {
                display: block;
                width: 100%;
@@ -27,9 +28,6 @@
             &__item {
                 margin-right: 40px;
             }
-            &__item:last-child {
-                margin-right: 0;
-            }
             &__link {
                 text-decoration: none;
                 color: #ffffff;
@@ -39,6 +37,56 @@
                 &:hover {
                     color: $green;
                 }
+            }
+        }
+        
+    }
+}
+
+@media (max-width: 1060px) {
+    .nav {
+        .box {
+            .menu {
+                &__link {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .nav {
+        .box {
+            .menu {
+                &__item {
+                    margin-right: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 804px) {
+    .nav {
+        .box {
+            .menu {
+                &__link {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .nav {
+        .box {
+            .menu {
+                display: none;
+            }
+            .humburger {
+                display: block;
             }
         }
     }
