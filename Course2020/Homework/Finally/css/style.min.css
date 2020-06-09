@@ -414,7 +414,8 @@
     text-align: center; }
 
 .diploma {
-  padding-bottom: 79px; }
+  padding-bottom: 79px;
+  width: 100%; }
   .diploma__descr {
     margin: 19px 0 16px 0;
     color: #919191;
