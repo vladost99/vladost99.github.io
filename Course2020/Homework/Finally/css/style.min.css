@@ -414,8 +414,7 @@
     text-align: center; }
 
 .diploma {
-  padding-bottom: 79px;
-  width: 100%; }
+  padding-bottom: 79px; }
   .diploma__descr {
     margin: 19px 0 16px 0;
     color: #919191;
@@ -467,8 +466,11 @@
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
+    .diploma .subtitle {
+      text-align: center; }
     .diploma__descr {
-      font-size: 15px; } }
+      font-size: 15px;
+      text-align: center; } }
 
 @media (max-width: 400px) {
   .diploma .subtitle {
