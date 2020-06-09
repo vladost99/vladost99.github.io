@@ -6,4 +6,8 @@
     background: none;
     text-transform: uppercase;
     cursor: pointer;
+    &_green{
+        border-color: green;
+        color: green;
+    }
 }

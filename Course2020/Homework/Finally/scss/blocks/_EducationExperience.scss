@@ -1,0 +1,30 @@
+.box {
+    display: flex;
+    &__items {
+        &:first-child {
+            margin-right: 72px;
+        }
+        &:last-child {
+            margin-top: 82px;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .box {
+        flex-direction: column;
+        &__items {
+            &:first-child {
+                margin-right: 0px;
+            }
+            &:last-child {
+                margin-top: 82px;
+            }
+        }
+        .descr {
+            .title {
+                text-align: center;
+            }
+        }
+    }
+}
