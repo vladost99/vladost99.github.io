@@ -50,3 +50,14 @@
         }
     }
 }
+
+@media (max-width: 365px) {
+    .diploma {
+        .subtitle {
+            font-size: 16px;
+        }
+        &__descr {
+            font-size: 14px;
+        }
+    }
+}

@@ -473,6 +473,12 @@
   .diploma .subtitle {
     font-size: 19px; } }
 
+@media (max-width: 365px) {
+  .diploma .subtitle {
+    font-size: 16px; }
+  .diploma__descr {
+    font-size: 14px; } }
+
 .box {
   display: -webkit-box;
   display: -webkit-flex;
