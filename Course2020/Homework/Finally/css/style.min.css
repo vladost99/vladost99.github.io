@@ -478,7 +478,7 @@
     font-weight: 400;
     line-height: 30px; }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .diploma {
     display: -webkit-box;
     display: -webkit-flex;
@@ -496,6 +496,10 @@
     .diploma__descr {
       font-size: 15px; } }
 
+@media (max-width: 400px) {
+  .diploma .subtitle {
+    font-size: 19px; } }
+
 .box {
   display: -webkit-box;
   display: -webkit-flex;
@@ -506,7 +510,7 @@
   .box__items:last-child {
     margin-top: 82px; }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .box {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
