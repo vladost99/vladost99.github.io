@@ -1,6 +1,17 @@
 .resume {
     background-color: #f2f2f1;
     padding: 100px 0 120px 0;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        width: 30px;
+        height: 30px;
+        background-color: #f2f2f1;
+        transform: rotate(45deg);
+    }
     &__box {
         display: flex;
         flex-direction: column;

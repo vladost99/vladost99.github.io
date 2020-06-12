@@ -6,8 +6,15 @@
     background: none;
     text-transform: uppercase;
     cursor: pointer;
-    &_green{
+    outline: none;
+    &_green {
         border-color: green;
         color: green;
+    }
+    &_grey {
+        border: 0;
+        background-color: #191f21;
+        color: #ffffff;
+        font-weight: 700;
     }
 }
