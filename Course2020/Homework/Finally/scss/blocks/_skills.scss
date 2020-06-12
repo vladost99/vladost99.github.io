@@ -30,10 +30,18 @@
         background-color: green;
         height: 30px;
         display: flex;
+        width: 0;
         justify-content: flex-end;
         align-items: center;
         color:  #ffffff;
         padding-right: 10px;
+        transition: 1s;
+        position: relative;
+        &::before {
+            content: attr(per);
+            position: absolute;
+            color:  #ffffff;
+        }
     }
 }
 
