@@ -226,7 +226,7 @@
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding: 100px 0px 0px 100px; }
+    padding: 100px 0px 20px 100px; }
   .about__row {
     display: -webkit-box;
     display: -webkit-flex;
