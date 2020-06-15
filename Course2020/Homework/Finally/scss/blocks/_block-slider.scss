@@ -1,4 +1,33 @@
 .header {
+    position: relative;
+    .header-slider {
+        position: relative;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        .slick-dots {
+            position: absolute;
+            bottom: 60px;
+            right: 8%;
+            li {
+                list-style: none;
+                margin: 0px 10px;
+                &.slick-active {
+                    button {
+                        background-color: white;
+                    }
+                }
+            }
+            button {
+                font-size: 0; 
+                width:11px; 
+                height:11px;
+                border: 2px solid white;
+                border-radius: 50%;
+                background-color:transparent;
+            }
+        }
+    }
     .web-designer {
         background: url("../img/img.png") center center/cover no-repeat;
         height: 62.5vw;
@@ -20,8 +49,10 @@
         &__button {
             margin-top: 50px;
             transition: background-color .5s;
+            border: 2px solid #ffffff;
+            color: #ffffff;
             &:hover {
-                background-color: $green;
+                border-color: $green;
             }
         }
     }
@@ -37,16 +68,20 @@
     }
 }
 
-@media (max-width: 365px) {
+
+@media (max-width: 415px) {
     .header {
         .web-designer {
             &__title {
                 font-size: 20px;
+                line-height: 0;
+                margin-top: 35px;
             }
             &__button {
                width: 100px;
                height: 50px;
                font-size: 12px;
+               margin-top: 25px;
         }
     }
  }
