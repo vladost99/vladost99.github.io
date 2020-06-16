@@ -34,8 +34,8 @@ $(document).ready(function(){
     new WOW().init();
 //Progress bar
     $('.skills__progress').each(function() {
-        var $this = $(this);
-        var per = $this.attr('data-per');
+        let $this = $(this);
+        let per = $this.attr('data-per');
         $this.css("width", per +'%');
         $({animatedValue: 0}).animate({animatedValue: per},{
             duration: 1000,
@@ -82,7 +82,13 @@ $(document).ready(function(){
     
       };
       valideForms('#contact-form');
-      
+     
+      //smooth scroll
+      $("body").on('click', '[href*="#"]', function(e){
+        let fixed_offset = 100;
+        $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixed_offset }, 1000);
+        e.preventDefault();
+      });
 
 });
 
