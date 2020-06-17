@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-    //slider 1
+    //Slider 1
     $('.header-slider').slick({
         slidesToShow: 1,
         slidesToScroll: 1,
