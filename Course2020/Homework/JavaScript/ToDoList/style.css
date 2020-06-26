@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login {
+    width: 380px;
+    background-color: rgba(210, 208, 198, 0.85);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    border-top-right-radius: 30px;
+    box-shadow: 0 2px 10px #000;
+    display: block;
+}
+
+.login h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.login .inputBox {
+    margin: 25px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.login .inputBox label {
+    font-size: 18px;
+}
+
+.login .inputBox input {
+    padding: 15px;
+    border-radius: 15px;
+    outline: none;
+    margin: 5px 0;
+    border-width: 1px;
+    border-style: solid;
+}
+.login .inputBox input:focus {
+    border-color: cadetblue ;
+}
+
+.login  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login .btnLogin {
+    width: 150px;
+    height: 30px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgb(30, 30, 197);
+}
+
+
+/*Block ToDo*/
+.blockToDoList {
+    width: 990px;
+    background: #ccbbbb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 10px;
+    box-sizing: border-box;
+    display: none;
+}
+
+.blockToDoList h1 {
+    text-align: center;
+    width: 100%;
+}
+
+.blockToDoList .addTask  {
+    width: 100%;
+    display: flex;
+}
+
+.blockToDoList .addTask input {
+    width: 100%;
+    background: none;
+    border: none;
+    color: cadetblue;
+    outline: none;
+    border-bottom: 1px solid #000;
+}
+.blockToDoList .addTask input::placeholder {
+    font-size: 20px;
+}
+
+.blockToDoList .addTask button {
+    width: 80px;
+    height: 35px;
+    margin-left: 10px;
+    background: blue;
+    color: #ffffff;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: 700;
+    border-radius: 10px;
+}
+
+.blockToDoList .blockFilter {
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.blockToDoList .blockFilter .img {
+    cursor: pointer;
+}
+
+.blockToDoList .blockFilter #sortDate {
+    margin-left: 20px;
+}
+
+.blockToDoList .blockFilter #sortPrioritet {
+    margin-left: 80px;
+    margin-right: 65px;
+}
+
+
+
+.blockToDoList .blockFilter input {
+    background: none;
+    border: none;
+    color: cadetblue;
+    outline: none;
+    border-bottom: 1px solid #000;
+    max-width: 679px;
+    width: 100%;
+}
+.blockToDoList .blockFilter #sortCheck {
+    margin-left: 50px;
+    margin-right: 35px;
+}
+
+
+.blockToDoList .blockFilter input::placeholder {
+    font-size: 20px;
+}
+
+/*List*/
+#todoList {
+    margin-top: 20px;
+    width: 100%;
+    border-right: 1px solid grey;
+}
+
+#todoList .list-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.list-item .date {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+
+.list-item .prioritet {
+    width: 40px;
+    height: 35px;
+    background: #000;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+.list-item .arrows {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+}
+.list-item .arrows span {
+    cursor: pointer;
+}
+
+.list-item .arrows span:nth-child(1) {
+    margin-bottom: 3px;
+}
+
+.list-item .textValue {
+    background: grey;
+    padding: 5px;
+    max-width: 679px;
+    width: 100%;
+}
+
+.list-item .block-icon {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.list-item .block-icon span {
+    margin-right: 10px;
+    display: block;
+}
+
+.list-item .block-icon span i {
+    cursor: pointer;
+}
+
+.list-item .block-icon span:nth-child(1) i {
+    color: green;
+}
+
+.list-item .block-icon span:nth-child(2) i {
+    color: blue;
+}
+
+.list-item .block-icon span:nth-child(3) i {
+    color: red;
+}
+
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Блок логин-->
+    <div class="login" id="login">
+        <h2 class="login__title">Login Page</h2>
+        <form action="#">
+            <div class="inputBox">
+                <label for="email">Email</label>
+                <input type="text" placeholder="Enter your email" id="email">
+                <span class="text" id="txtEmail"></span>
+            </div>
+            <div class="inputBox">
+                <label for="password">Password</label>
+                <input type="password" placeholder="Enter your password" id="password">
+                <span class="text" id="txtPass"></span>
+            </div>
+            <button class="btnLogin" id="btnLogin">Login</button>
+        </form>
+    </div>
+    <!--Блок TodoList-->
+    <div class="blockToDoList" id="blockTodo">
+        <h1>TODO LIST</h1>
+        <div class="addTask">
+            <input type="text" placeholder="Task" class="addinput" id="addinput">
+            <button id="btnAddTask">ADD</button>
+        </div>
+        <div class="blockFilter">
+            <div class="img" id="sortDate">
+                <i class="fas fa-sort"></i>
+            </div>
+            <div class="img" id="sortPrioritet">
+                <i class="fas fa-sort-numeric-down"></i>
+            </div>
+            <input type="text" placeholder="пошук" id="search-input">
+            <div class="img" id="sortCheck">
+                <i class="fas fa-filter"></i>
+            </div>
+        </div>
+        <ul id="todoList">
+            <li class="list-item">
+                <div class="date">
+                    <span>12.10.2018</span>
+                    <span>13:41</span>
+                </div>
+                <div class="prioritet">0</div>
+                <div class="arrows">
+                    <span id="arrowUp">
+                        <i class="fas fa-arrow-up"></i>
+                    </span>
+                    <span id="arrowDown">
+                        <i class="fas fa-arrow-down"></i>
+                    </span>
+                </div>
+                <div class="textValue">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Dignissimos ratione, ullam illo dicta rem facere.</div>
+                <div class="block-icon">
+                    <span class="icon" id="edit">
+                        <i class="fas fa-edit"></i>
+                    </span>
+                    <span class="icon" id="check">
+                        <i class="fas fa-check-circle"></i>
+                    </span>
+                    <span class="icon" id="trash">
+                        <i class="fas fa-trash"></i>
+                    </span>
+                </div>
+            </li>
+            
+        </ul>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
