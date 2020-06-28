@@ -5,20 +5,25 @@ const blockLogin = document.querySelector('#login'), //block login
     password = document.querySelector('#password'), //input password
     txtEmail = document.querySelector('#txtEmail'), //text email
     txtPassw = document.querySelector('#txtPass');  //text password
+    
+ // block modal window   
+const blocksModal = document.querySelector('.blocks-modal'); //block modal window
+
 
 // елемены блока toDoList
 const blockToDo = document.querySelector('#blockTodo'); //block toDoList
 
     //при клике проверяет логин и пароль,если правильно скрывает блок
-    btnLogin.addEventListener('click', function() {
-        checkEmail();
-        checkPassword();
+btnLogin.addEventListener('click', function() {
+    checkEmail();
+    checkPassword();
 
-      if (checkEmail()  &&  checkPassword()) {
-            blockLogin.style.display = 'none';
-            blockToDo.style.display = 'block';
-        }
-    });
+    if (checkEmail()  &&  checkPassword()) {
+        blockLogin.classList.add('hide');
+        blockToDo.classList.add('active');
+        blocksModal.classList.add('active');
+    }
+});
 
 
 
