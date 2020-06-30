@@ -45,56 +45,29 @@
             </div>
         </div>
         <ul id="todoList">
-            <li class="list-item">
-                <div class="date">
-                    <span>12.10.2018</span>
-                    <span>13:41</span>
-                </div>
-                <div class="prioritet">0</div>
-                <div class="arrows">
-                    <span id="arrowUp">
-                        <i class="fas fa-arrow-up"></i>
-                    </span>
-                    <span id="arrowDown">
-                        <i class="fas fa-arrow-down"></i>
-                    </span>
-                </div>
-                <div class="textValue">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Dignissimos ratione, ullam illo dicta rem facere.</div>
-                <div class="block-icon">
-                    <span class="icon" id="edit">
-                        <i class="fas fa-edit"></i>
-                    </span>
-                    <span class="icon" id="check">
-                        <i class="fas fa-check-circle"></i>
-                    </span>
-                    <span class="icon" id="trash">
-                        <i class="fas fa-trash"></i>
-                    </span>
-                </div>
-            </li>    
+               
         </ul>
     </div>
-   <div class="blocks-modal">
-        <!--Модальне окно видалення-->
     <div class="modal-delete">
-        <h3>Delete item?</h3>
-        <div class="blocks-button">
-            <button>No</button>
-            <button>Yes</button>
-        </div>
+       <div class="modal">
+            <h3>Delete item?</h3>
+            <div class="blocks-button">
+                <button data-delete="no">No</button>
+                <button data-delete="yes"="">Yes</button>
+            </div>
+       </div>
     </div>
     <!--Модальне окно редагування-->
     <div class="modal-edit">
-        <h3>Edit text</h3>
-        <textarea  id="" placeholder="New text of todo item..."></textarea>
-        <div class="blocks-button">
-            <button>CANCEL</button>
-            <button>SAVE</button>
-        </div>
+       <div class="modal">
+            <h3>Edit text</h3>
+            <textarea class="textEdit" placeholder="New text of todo item..."></textarea>
+            <div class="blocks-button">
+                <button data-edit="no">CANCEL</button>
+                <button data-edit="save">SAVE</button>
+            </div>
+       </div>
     </div>
-   </div>
     <script src="main.js"></script>
 </body>
 </html>
