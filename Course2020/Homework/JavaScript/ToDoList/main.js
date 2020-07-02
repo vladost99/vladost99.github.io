@@ -9,7 +9,8 @@ const blockLogin = document.querySelector('#login'), //block login
 
 
 //при клике проверяет логин и пароль,если правильно скрывает блок
-btnLogin.addEventListener('click', function() {
+btnLogin.addEventListener('click', function(e) {
+    e.preventDefault();
     checkEmail();
     checkPassword();
 
@@ -23,10 +24,14 @@ btnLogin.addEventListener('click', function() {
 const blockToDo = document.querySelector('#blockTodo'),  //block toDoList
       inputTask = document.querySelector('#addinput'),  //input task
       btnAddTodo = document.querySelector('#btnAddTask'),  //add task
+      blockFilter = document.querySelector('.blockFilter'); // block filter
       listToDo = document.querySelector('#todoList'),  //ul list
       textEdit = document.querySelector('.textEdit'); //text edit
+      
+      
 
- //modal window     
+
+// modal window     
 const modalDelete = document.querySelector('.modal-delete'),  //modal delete
       modalEdit = document.querySelector('.modal-edit'); // modal edit
 
@@ -48,7 +53,8 @@ btnAddTodo.addEventListener('click', function() {
         hours: date.getHours(),
         minutes: date.getMinutes(),
         milliseconds: date.getTime(),
-        check: false
+        check: false,
+        priority: 1
     };
 
     list.push(newToDo);
@@ -60,29 +66,23 @@ btnAddTodo.addEventListener('click', function() {
 
 // открывает модальные окна, и проверяет check
 listToDo.addEventListener('click', function(event) {
-   let id =  event.target.closest('li').getAttribute('id');
-    // при клике на кнопку открывает modal-delete  и ставит ей атрибут для удаление
-    if (event.target.classList.contains('fa-trash')) { 
-        modalDelete.style.visibility = 'visible';
-        modalDelete.setAttribute('data-del', id);
-    }
-
-    // при клике открывает modal-edit и вставляет текст из блока для редагування
-    if(event.target.classList.contains('fa-edit')) {
-        textEdit.textContent = list[id].todo; 
-        modalEdit.setAttribute('data-edit', id);
-        modalEdit.style.visibility = 'visible';
-    }
-
-
-    //при клике меняет значение на check(true)  або на check(false)
+    let id =  event.target.closest('li').getAttribute('id');
+   // показывает  модалные окна
+    showModals(event.target, id);
+    // изменяет значение check
     if(event.target.classList.contains('fa-check-circle')) {
         list[id].check = !list[id].check;
     }
-    id = '';
+
+    // изменение приоритета
+    changePriority(event.target, id);
+    
     addToDo();
     localStorage.setItem('TODO', JSON.stringify(list));
 });
+
+
+
 
 
 
@@ -97,46 +97,135 @@ modalDelete.addEventListener('click', function(event) {
                 modalDelete.style.visibility = 'hidden';
                 
             } 
-            addToDo();
-            localStorage.setItem('TODO', JSON.stringify(list));      
+                
         }
         if(event.target.getAttribute('data-delete') == 'no') {
             modalDelete.style.visibility = 'hidden';
         }
 
     });
+    addToDo();
+    localStorage.setItem('TODO', JSON.stringify(list));
 });
 
 // редакт  текста
 modalEdit.addEventListener('click', function(event) {
     let id = this.getAttribute('data-edit');
-        if(event.target.getAttribute('data-edit') == 'save') {
-            if(list[id].todo == textEdit.textContent) {
-               list[id].todo = textEdit.value;
-               modalEdit.style.visibility = 'hidden';
-               modalEdit.removeAttribute('data-edit');
-            }
-        }
-        if(event.target.getAttribute('data-edit') == 'no') {
-            modalEdit.style.visibility = 'hidden';
-            modalEdit.removeAttribute('data-edit');
-        }
-   addToDo();
+   editText(event.target, id);
    localStorage.setItem('TODO', JSON.stringify(list));
+   addToDo();
+});
+
+//  при клике сортирует
+blockFilter.addEventListener('click', function(e) {
+ 
+ sort(e.target);
+ localStorage.setItem('TODO', JSON.stringify(list));
+ addToDo();
+ 
 });
 
 
+// функция сортирует по дате,приоритету,check
+function sort(target) {
+    // сортирует по check
+    if(target.classList.contains('fa-filter')) {
+        if(target.getAttribute('data-check') == 'false') {
+            list.sort((a, b) => {
+              return  b.check - a.check;
+            });
+            target.setAttribute('data-check', 'true');
+        }
+         else {
+            list.sort((a, b) => {
+                return  a.check - b.check;
+            });
+            target.setAttribute('data-check', 'false');
+         }
+    }
+
+    // sort Priority
+    if(target.classList.contains('fa-sort-numeric-down')) {
+        if(target.getAttribute('data-sortprioity') == 'false') {
+            list.sort((a, b) => {
+              return  a.priority>b.priority?1:-1;
+            });
+            target.setAttribute('data-sortprioity', 'true');
+        }
+         else {
+            list.sort((a, b) => {
+                return  b.priority>a.priority?1:-1;
+            });
+            target.setAttribute('data-sortprioity', 'false');
+         }
+    }
+    // sort Date
+    if(target.classList.contains('fa-sort')) {
+        if(target.getAttribute('data-sortdate') == 'false') {
+            list.sort((a, b) => {
+              return  a.milliseconds>b.milliseconds?1:-1;
+            });
+            target.setAttribute('data-sortdate', 'true');
+        }
+         else {
+            list.sort((a, b) => {
+                return  b.milliseconds>a.milliseconds?1:-1;
+            });
+            target.setAttribute('data-sortdate', 'false');
+         }
+    }
+
+}
 
 
 
 
 
 
+//функция редактирут текст
+function editText(target, id) {
+    if(target.getAttribute('data-edit') == 'save') {
+        list[id].todo = textEdit.value;
+        modalEdit.style.visibility = 'hidden';
+        modalEdit.removeAttribute('data-edit');
+    }
+    
+    if(target.getAttribute('data-edit') == 'no') {
+        modalEdit.style.visibility = 'hidden';
+        modalEdit.removeAttribute('data-edit');
+    }
+}
 
 
+// функкия показывает окна
+function showModals(target,id) {
+    // модальное окно для удаление елемента из списка
+    if (target.classList.contains('fa-trash')) { 
+        modalDelete.style.visibility = 'visible';
+        modalDelete.setAttribute('data-del', id);
+    }
+    // модальное окно для редактирование текста
+   if(target.classList.contains('fa-edit')) { 
+        textEdit.textContent = '';
+        modalEdit.setAttribute('data-edit', id);
+        modalEdit.style.visibility = 'visible';
+    }
+}
 
 
+//функция для изменения приоритета
+function changePriority(target,id) {
+  if(target.classList.contains('fa-arrow-up')) {
+      list[id].priority++;
+  } 
+  if(target.classList.contains('fa-arrow-down')) {
+      list[id].priority--;
+  } 
+  if( list[id].priority <= 1) {
+      list[id].priority = 1;
+  }
 
+}
 
 
 
@@ -153,7 +242,7 @@ function addToDo() {
             <span>${(item.day<10?'0':false) + item.day}.${(item.month+1)<10?'0'+(item.month + 1):false}.${item.fullYear}</span>
             <span>${(item.hours<10?'0':false) + item.hours}:${(item.minutes<10?'0':false) + item.minutes}</span>
         </div>
-        <div class="prioritet">0</div>
+        <div class="prioritet">${item.priority}</div>
         <div class="arrows">
             <span id="arrowUp">
                 <i class="fas fa-arrow-up"></i>
