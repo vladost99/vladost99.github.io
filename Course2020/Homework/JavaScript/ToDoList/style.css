@@ -8,6 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
 }
 
 .login {
@@ -137,6 +138,9 @@ body {
 .blockToDoList .blockFilter .img {
     cursor: pointer;
 }
+.blockToDoList .blockFilter .img i {
+    transition: .5s;
+}
 
 .blockToDoList .blockFilter .img.sortDate {
     margin-left: 20px;
@@ -144,6 +148,10 @@ body {
 
 .blockToDoList .blockFilter .img.sortDate i {
     margin-top: 10px;
+}
+
+.blockToDoList .blockFilter .img i:hover {
+    color: cyan;
 }
 
 
@@ -198,12 +206,27 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    position: relative;
+    transition: .5s;
+}
+
+
+
+#todoList .list-item.hide {
+    transition: .5s;
+    display: none;
+}
+
+
+
+#todoList .list-item.delete {
+    animation: delete 1.2s;
 }
 
 .animate {
     animation: show 1s;
     position: relative;
-    animation-delay: .2s;
+    animation-fill-mode: forwards;
 }
 
 .list-item .date {
@@ -229,6 +252,10 @@ body {
 }
 .list-item .arrows span {
     cursor: pointer;
+    transition: .5s;
+}
+.list-item .arrows span:hover i {
+    color: cyan;
 }
 
 .list-item .arrows span:nth-child(1) {
@@ -372,6 +399,13 @@ body {
     margin-right: 25px;
 }
 
+/*Clear*/
+
+
+
+
+
+
 /*class for JS*/
 .active {
     display: block;
@@ -380,3 +414,16 @@ body {
 .hide {
     display: none;
 }
+
+
+@keyframes delete {
+    0% {
+        right: 0px;
+        opacity: 1;
+    }
+    100% {
+        right: 50px;
+        opacity: 0;
+    }
+}
+
