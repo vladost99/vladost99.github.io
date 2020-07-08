@@ -427,3 +427,18 @@ body {
     }
 }
 
+@keyframes show {
+    0%{
+        opacity: 0;
+        top: -50px;
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+    }
+}
+
+.animate {
+    position: relative;
+    animation: show 1s ease;
+}
