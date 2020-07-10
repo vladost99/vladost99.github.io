@@ -1,0 +1,50 @@
+[
+{
+   "todo": "Данные из jsonplaceholder",
+   "fullYear": date.getFullYear(),
+   "day": date.getDate(),
+   "month": date.getMonth(),
+   "hours": date.getHours(),
+   "minutes": date.getMinutes(),
+   "milliseconds": date.getTime(),
+   "check": false,
+   "priority": 3,
+   "id": 44
+},
+{
+   "todo": "Данные из jsonplaceholder2",
+   "fullYear": date.getFullYear(),
+   "day": date.getDate(),
+   "month": date.getMonth(),
+   "hours": date.getHours(),
+   "minutes": date.getMinutes(),
+   "milliseconds": date.getTime(),
+   "check": false,
+   "priority": 3,
+   "id": 44
+},
+{
+   "todo": "sutieq rrrr",
+   "fullYear": date.getFullYear(),
+   "day": date.getDate(),
+   "month": date.getMonth(),
+   "hours": date.getHours(),
+   "minutes": date.getMinutes(),
+   "milliseconds": date.getTime(),
+   "check": false,
+   "priority": 3,
+   "id": 44
+},
+{
+ "todo": "sfdfsgsdrttttt",
+   "fullYear": date.getFullYear(),
+   "day": date.getDate(),
+   "month": date.getMonth(),
+   "hours": date.getHours(),
+   "minutes": date.getMinutes(),
+   "milliseconds": date.getTime(),
+   "check": false,
+   "priority": 3,
+   "id": 44
+}
+]
