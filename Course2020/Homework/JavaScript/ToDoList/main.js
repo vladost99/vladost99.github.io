@@ -38,10 +38,29 @@ btnLogin.addEventListener('click', function(e) {
 
 
 let list = [];
-if (localStorage.getItem('TODO')) {
-    list = JSON.parse(localStorage.getItem('TODO'));
-    addToDo();
+let load = getStorage();
+
+
+//получает данные из cервера my-json-server 
+function getStorage() {
+return fetch("https://my-json-server.typicode.com/vladost99/todos/todos")
+ .then(result => {return result.json();})
+ .then(result);
 }
+
+//проверяет есть ли локальные данные
+function result(result) {
+    if(!localStorage.getItem('TODO')){
+        list = result;
+        localStorage.setItem('TODO', JSON.stringify(list));
+        } else {
+            list = JSON.parse(localStorage.getItem('TODO'));
+        }
+        addToDo();   
+}
+
+
+
 //при нажатие на кнопку додается toDo
 btnAddTodo.addEventListener('click', function() {
     const  date = new Date();
@@ -93,24 +112,11 @@ listToDo.addEventListener('click', function(event) {
 // удаляет toDo из списка
 modalDelete.addEventListener('click', function(event) {
     let id = this.getAttribute('data-del');
-    list.forEach( (item, i) => {
-        // удаление toDo из localStorage
-        if(event.target.getAttribute('data-delete') == 'yes') {
-            if(item.id == id) {
-                modalDelete.style.visibility = 'hidden';
-                list.splice(i, 1);
-                
-            } 
-                
-        }
-        if(event.target.getAttribute('data-delete') == 'no') {
-            modalDelete.style.visibility = 'hidden';
-        }
-
-    });
-    addToDo();
-    localStorage.setItem('TODO', JSON.stringify(list));
+    deleteToDo(event,id);
 });
+
+
+
 
 // редакт  текста
 modalEdit.addEventListener('click', function(event) {
@@ -220,7 +226,23 @@ function sort(target) {
 
 }
 
-
+//удаляет елемент
+function deleteToDo(event, id) {
+    list.forEach( (item, i) => {
+        // удаление toDo из localStorage
+        if(event.target.getAttribute('data-delete') == 'yes') {
+            if(item.id == id) {
+                modalDelete.style.visibility = 'hidden';
+                list.splice(i, 1);
+            }     
+        }
+        if(event.target.getAttribute('data-delete') == 'no') {
+            modalDelete.style.visibility = 'hidden';
+        }
+    });
+    addToDo();
+    localStorage.setItem('TODO', JSON.stringify(list));
+}
 
 
 // функция для check
