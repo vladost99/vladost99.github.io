@@ -2,25 +2,25 @@
   "todos": [
     {
       "name": "Данные из jsonplaceholder",
-      "date":  Date.now(),
+      "date": 1594262729413,
       "check": true,
       "priority": 3
     },
     {
       "name": "Данные из jsonplaceholder2",
-      "date":  Date.now(),
+      "date":  1594232729411,
       "check": false,
       "priority": 5
     },
     {
       "name": "sutieq rrrr",
-      "date":  Date.now(),
+      "date":  1594232839413,
       "check": false,
       "priority": 10
     },
     {
       "name": "sfdfsgsdrttttt",
-      "date":  Date.now(),
+      "date":  1594232939413,
       "check": false,
       "priority": 3
     }
