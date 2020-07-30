@@ -4,25 +4,25 @@
       "name": "Данные из jsonplaceholder",
       "date": 1594262729413,
       "check": true,
-      "priority": 3
+      "prioritet": 3
     },
     {
       "name": "Данные из jsonplaceholder2",
       "date":  1594232729411,
       "check": false,
-      "priority": 5
+      "prioritet": 5
     },
     {
       "name": "sutieq rrrr",
       "date":  1594232839413,
       "check": false,
-      "priority": 10
+      "prioritet": 10
     },
     {
       "name": "sfdfsgsdrttttt",
       "date":  1594232939413,
       "check": false,
-      "priority": 3
+      "prioritet": 3
     }
   ]
 }
