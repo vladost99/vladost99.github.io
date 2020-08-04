@@ -124,5 +124,121 @@ window.addEventListener('DOMContentLoaded', function() {
             showSlides(slideIndex = n);
         }
 
+       //modal 
+    
+
+    modal('.description-btn','.overlay','.popup-close')
+    modal('.more','.overlay','.popup-close');
+    
+    function modal(SelectorBtn,Overlay,closeSelector) {
+        let more = document.querySelectorAll(SelectorBtn),
+       overlay = document.querySelector(Overlay),
+       close = document.querySelector(closeSelector);
+
+        more.forEach(item => {
+            item.addEventListener('click', function() {
+                overlay.style.display = 'block';
+                this.classList.add('more-splash');
+                document.body.style.overflow = 'hidden';
+                })
+            });
+    
+
+        close.addEventListener('click', function() {
+            overlay.style.display = 'none';
+            more.forEach(item => item.classList.remove('more-splash'));
+            document.body.style.overflow = '';
+                });
+    }
+
+
+    //script send form dan
+    let message = {
+        loading: 'Загрузка',
+        success: 'Спасибо! Скоро мы с вами свяжемся',
+        failure: 'Что-то пошло не так'
+    }
+
+    let form = document.querySelector('.main-form'),
+        input = form.getElementsByTagName('input'),
+        statusMessage = document.createElement('div');
+
+        statusMessage.classList.add('status');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            form.appendChild(statusMessage);
+
+            let request = new XMLHttpRequest();
+                request.open('POST', 'server.php');
+                request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+
+                let formData = new FormData(form);
+
+                let obj = {};
+                formData.forEach(function(value, key) {
+                    obj[key] = value;
+                });
+                let json = JSON.stringify(obj);
+
+                request.send(json);
+
+                request.addEventListener('readystatechange', () => {
+                    if(request.readyState < 4) {
+                        statusMessage.innerHTML = message.loading;
+                    }   else if (request.readyState === 4 && request.status == 200) {
+                        statusMessage.innerHTML = message.success;
+                    } else {
+                        statusMessage.innerHTML = message.failure;
+                    }
+                });
+
+                for(let i = 0; i < input.length; i++ ) {
+                    input[i].value = '';
+                }
+
+        });
+
+
+     /* <!-- calculator--> */
+
+     let persons  = document.querySelectorAll('.counter-block-input')[0],
+        restDays = document.querySelectorAll('.counter-block-input')[1],
+        place = document.getElementById('select'),
+        totalValue = document.getElementById('total'),
+        personSum = 0,
+        daysSum = 0,
+        total = 0;
+
+        totalValue.innerHTML = 0;
+
+        persons.addEventListener('change', function() {
+            personSum = +this.value;
+            total = (daysSum + personSum)*4000;
+            if(restDays.value == '') {
+                totalValue.innerHTML = 0;
+            } else {
+                totalValue.innerHTML = total;
+                }
+       });
+
+      restDays.addEventListener('change', function() {
+        daysSum = +this.value;
+        total = (daysSum + personSum)*4000;
+        if(persons.value == '') {
+            totalValue.innerHTML = 0;
+        } else {
+            totalValue.innerHTML = total;
+            }
+        });
+
+        place.addEventListener('change', function() {
+            if(restDays.value == '' || persons.value == '') {
+                totalValue.innerHTML = 0;
+            } else {
+                let a = total;
+                totalValue.innerHTML = a * this.option[this.selectedIndex].value;
+            }
+        });
 
 });
