@@ -1,0 +1,3 @@
+https://www.npmjs.com/package/es6-promise - полифил ес6 промис
+npm install -D babel-loader @babel/core @babel/preset-env webpack -  babel-loader
+npm install --save @babel/polyfill
