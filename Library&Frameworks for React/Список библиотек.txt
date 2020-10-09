@@ -1,1 +1,3 @@
-https://reactstrap.github.io/ - ReactStrap
+https://reactstrap.github.io/ - ReactStrap для дизайна на основе bootstrap
+
+https://formik.org/docs/tutorial - библиотека для форм
