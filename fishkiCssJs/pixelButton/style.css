@@ -27,8 +27,7 @@ a {
 }
 
 a:hover {
-    background: #ec0b36 url('img/pixel.png');
-    transition-delay: .8s;
+    background: url('img/pixel.png');
     background-size: 180px;
     animation: animate .8s steps(8) forwards;
 }
@@ -38,6 +37,6 @@ a:hover {
         background-position-y: 0;
     }
     100% {
-        background-position-y: -480px;
+        background-position-y: -280px;
     }
 }

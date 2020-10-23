@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clip-path Transform Effects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="banner">
+        <video src="video.mp4" autoplay muted loop></video>
+    </section>
+    <div class="container">
+        <h2>Scroll to See Magic Again</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Iure, voluptatibus facere eius ullam nostrum nobis voluptates ab, saepe reiciendis animi culpa!
+            Nobis deserunt beatae at corporis ex distinctio, ipsum fugiat magni accusamus voluptas repellendus?
+            Labore odio dicta amet sapiente consequatur voluptatum sunt neque molestiae ullam corporis tenetur
+            dolore autem distinctio libero illo, et, soluta iusto optio quia magni veritatis! Eveniet sunt maiores
+            molestiae quisquam totam sapiente quos magnam assumenda eaque. Nihil, rem soluta dolores rerum error vero
+            in ab aliquam, voluptatum facere deleniti libero nobis reiciendis corporis, cupiditate perferendis fugiat id quo sit.
+            Rerum dolorum sunt voluptates amet officia quod, iusto, accusamus corrupti, dolores veniam eius iure delectus hic sequi
+            mollitia possimus quas eveniet autem aut placeat unde labore. Eligendi!
+         </p>
+    </div>
+
+    <script>
+        const banner = document.querySelector('.banner');
+        window.addEventListener('scroll', () => {
+            const value = window.scrollY;
+            banner.style.clipPath = `circle(${value}px at center center)`;
+        });
+    </script>
+</body>
+</html>
