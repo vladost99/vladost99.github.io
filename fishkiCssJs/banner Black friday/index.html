@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Banner for Black Friday</title>
+</head>
+<body>
+    <section>
+        <h2>Black<br><span>Friday</span></h2>
+        <div class="black"></div>
+        <img src="text.png" alt="">
+    </section>
+
+    <script>
+        const black = document.querySelector('.black');
+
+        window.onmousemove = (e) => {
+            const x = e.clientX;
+            black.style.left = x + 'px';
+        }
+    </script>
+</body>
+</html>
