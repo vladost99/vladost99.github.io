@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Background Image Size Change into Small when Scrolling</title>
+</head>
+<body>
+    <div id="header"></div>
+    <section>
+        <h2>Background Image Size Change into Small when Scrolling</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            um pariatur nihil, laudantium aliquam iste expedita quae
+            aspernatur unde neque odio aliquid, quis blanditiis 
+            assumenda veniam. Adipisci quibusdam odio nihil. Nobis,
+            necessitatibus voluptatem. Molestiae numquam quas quam
+            esse, blanditiis dolorum unde, animi ratione tenetur 
+            optio, ipsam dolore? Odio temporibus hic explicabo, 
+            quos cum repellat esse impedit soluta et eaque dignissimos 
+            facere eius adipisci iste nihil, beatae consequuntur
+            dicta. Maiores recusandae iure animi voluptates delectus!
+            Blanditiis beatae enim sint reprehenderit quaerat recusandae odit ut minima ipsa,
+            repellendus molestiae reiciendis, aperiam,
+            eligendi possimus. Recusandae illo in quo, blanditiis
+            ullam quos harum iusto possimus?</p>
+    </section>
+    <script>
+        const bg = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            bg.style.backgroundSize = 160 - +window.pageYOffset/12 + '%';
+            bg.style.opacity = 1 - +window.pageYOffset/700+'';
+        });
+    </script>
+</body>
+</html>
