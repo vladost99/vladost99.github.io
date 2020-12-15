@@ -9,7 +9,7 @@ const renderCalendar = () => {
     date.getFullYear(),
     date.getMonth() + 1,
     0
-  ).getDate();
+  ).getDate(); //последний день месяц
 
   console.log('Last day = ' + lastDay);
 
@@ -19,13 +19,19 @@ const renderCalendar = () => {
     0
   ).getDate();
 
+  console.log('Prev Last day = ' + prevLastDay);
+
   const firstDayIndex = date.getDay();
+
+  console.log('First day index = ' + firstDayIndex);
 
   const lastDayIndex = new Date(
     date.getFullYear(),
     date.getMonth() + 1,
     0
   ).getDay();
+
+  console.log(' Last day index = ' + lastDayIndex);
 
   const nextDays = 7 - lastDayIndex - 1;
 
